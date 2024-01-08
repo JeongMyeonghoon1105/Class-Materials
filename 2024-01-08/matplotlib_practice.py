@@ -15,11 +15,25 @@ import matplotlib.pyplot as plt
 # plt.show()
 
 # 여러 개의 그래프 그리기
+# lst = [
+#     [1, 2, 3, 4, 5],
+#     [3, 5, 7, 9, 10],
+#     [2, 4, 8, 6, 12],
+#     [5, 10, 12, 13, 17]
+# ]
+# plt.plot(lst[0], lst[1], 'b-', lst[0], lst[2], 'g-', lst[0], lst[3], 'r-')
+# plt.show()
+
+# 각 축에 label name 넣기
 lst = [
-    [1, 2, 3, 4, 5],
+    ['1/1', '2/1', '3/1', '4/1', '5/1'],
     [3, 5, 7, 9, 10],
     [2, 4, 8, 6, 12],
     [5, 10, 12, 13, 17]
 ]
 plt.plot(lst[0], lst[1], 'b-', lst[0], lst[2], 'g-', lst[0], lst[3], 'r-')
+plt.xlabel('Month')
+plt.ylabel('Output')
 plt.show()
+
+
