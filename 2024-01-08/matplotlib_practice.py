@@ -25,15 +25,34 @@ import matplotlib.pyplot as plt
 # plt.show()
 
 # 각 축에 label name 넣기
+# lst = [
+#     ['1/1', '2/1', '3/1', '4/1', '5/1'],
+#     [3, 5, 7, 9, 10],
+#     [2, 4, 8, 6, 12],
+#     [5, 10, 12, 13, 17]
+# ]
+# plt.plot(lst[0], lst[1], 'b-', lst[0], lst[2], 'g-', lst[0], lst[3], 'r-')
+# plt.xlabel('Month')
+# plt.ylabel('Output')
+# plt.show()
+
+# 데이터프레임 시각화
+import pandas as pd
+
 lst = [
-    ['1/1', '2/1', '3/1', '4/1', '5/1'],
-    [3, 5, 7, 9, 10],
-    [2, 4, 8, 6, 12],
-    [5, 10, 12, 13, 17]
+    [50, 60, 70, 80],
+    [62, 63, 55, 77],
+    [73, 72, 55, 66],
+    [72, 83, 55, 67],
+    [76, 71, 45, 36],
 ]
-plt.plot(lst[0], lst[1], 'b-', lst[0], lst[2], 'g-', lst[0], lst[3], 'r-')
+
+df = pd.DataFrame(lst)
+df.index = ['1/1', '2/1', '3/1', '4/1', '5/1']
+df.columns = ['David', 'Joshua', 'Aaron', 'Phillip']
+print(df)
+
+plt.plot(df.index.to_list(), df['David'].to_list(), 'b-')
 plt.xlabel('Month')
-plt.ylabel('Output')
+plt.ylabel('Score')
 plt.show()
-
-
