@@ -2,16 +2,11 @@ import pandas as pd
 from datetime import timedelta as td
 
 
-<<<<<<< HEAD
 # csv 파일 불러와서 데이터프레임 생성
 # df = pd.read_csv("C:/Users/Coding Lab/Desktop/Data-Analysis-Class/2024-01-27/data.csv")
 df = pd.read_csv('/Users/jeongmyeonghun/Desktop/학원 수업/2024-01-27/data.csv')
 
 # a, b, c 데이터프레임 생성
-=======
-df = pd.read_csv("C:/Users/Coding Lab/Desktop/Data-Analysis-Class/2024-01-27/data.csv")
-# df = pd.read_csv('/Users/jeongmyeonghun/Desktop/학원 수업/2024-01-27/data.csv')
->>>>>>> 27ee084523da7045818f7b0ff60aebc2e219f813
 a = pd.DataFrame([], columns = df.columns)
 b = pd.DataFrame([], columns = df.columns)
 c = pd.DataFrame([], columns = df.columns)
@@ -26,23 +21,12 @@ for i in range(len(df.index)):
     if 'AR' in df['jkl'][i]:
         c.loc[len(c.index)] = df.loc[i]
 
-<<<<<<< HEAD
-
-# ghi 컬럼과 def 컬럼의 차(시간 단위) 계산하여 'test'라는 이름의 새 컬럼 생성
-lst = []
-for i in range(len(a.index)):
-    diff = pd.to_datetime(df['ghi'][i]) - pd.to_datetime(df['def'][i])
-    # 두 컬럼의 차이를 계산하면 날짜 및 시간으로 이루어진 timedelta 값이 나옴
-    # (날짜 * 24 + 초 / 3600)의 값을 통해 시간차 계산
-    lst.append(diff.days * 24 + diff.seconds // 3600)
-=======
 a_lst = []
 lst = []
 for i in range(len(a.index)):
     diff = pd.to_datetime(a['ghi'][i]) - pd.to_datetime(a['def'][i])
     a_lst.append([diff.days * 24 + diff.seconds // 3600, (diff.seconds % 3600) // 60])
     lst.append(str(a_lst[i][0]) + ':' + str(a_lst[i][1]))
->>>>>>> 27ee084523da7045818f7b0ff60aebc2e219f813
 a['test'] = lst
 
 h_sum = 0
@@ -88,9 +72,6 @@ for i in range(len(c_lst)):
     m_sum += c_lst[i][1]
 c.loc[len(c.index)] = ['' for i in range(len(c.columns)-1)] + [str(h_sum // len(c_lst)) + ':' + str(m_sum // len(c_lst))]
 
-<<<<<<< HEAD
-# 각 데이터프레임을 csv 파일로 저장
-=======
 print(a)
 print()
 print(b)
@@ -99,7 +80,6 @@ print(c)
 print()
 
 
->>>>>>> 27ee084523da7045818f7b0ff60aebc2e219f813
 a.to_csv('a.csv', index=False)
 b.to_csv('b.csv', index=False)
 c.to_csv('c.csv', index=False)

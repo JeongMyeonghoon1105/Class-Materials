@@ -4,7 +4,8 @@ from datetime import datetime
 
 
 # csv 파일을 바탕으로 데이터프레임 생성 & 컬럼명 설정
-df = pd.read_csv('/Users/jeongmyeonghun/Desktop/학원 수업/2024-02-24/time_data.csv')
+# df = pd.read_csv("C:/Users/Coding Lab/Desktop/Data-Analysis-Class/2024-03-02/time_data.csv")
+df = pd.read_csv('/Users/jeongmyeonghun/Desktop/학원 수업/2024-03-02/time_data.csv')
 df.columns = ['Start', 'End']
 
 
@@ -20,6 +21,7 @@ y_labels = range(len(df))
 # 그래프 사이즈 설정 & 폰트 사이즈 지정
 plt.figure(figsize=(20, 6))
 plt.rc('xtick', labelsize=5)
+
 
 # 각 플롯의 시작점(시작 시간)과 가로 길이(소요 시간 만큼) 설정
 left = df['Start']
