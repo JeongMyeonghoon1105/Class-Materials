@@ -4,8 +4,8 @@ from datetime import datetime
 
 
 # csv 파일을 바탕으로 데이터프레임 생성 & 컬럼명 설정
-# df = pd.read_csv("C:/Users/Coding Lab/Desktop/Data-Analysis-Class/2024-03-02/time_data.csv")
-df = pd.read_csv('/Users/jeongmyeonghun/Desktop/학원 수업/2024-03-02/time_data.csv')
+df = pd.read_csv("C:/Users/Coding Lab/Desktop/Data-Analysis-Class/2024-03-02/time_data.csv")
+# df = pd.read_csv('/Users/jeongmyeonghun/Desktop/학원 수업/2024-03-02/time_data.csv')
 df.columns = ['Start', 'End']
 
 
@@ -36,6 +36,12 @@ plt.barh(y_labels, width, left=left, color='skyblue', edgecolor='black', alpha=0
 plt.gca().xaxis.set_major_formatter(plt.matplotlib.dates.DateFormatter('%Y.%m.%d %H:%M'))
 plt.gca().xaxis.set_major_locator(plt.matplotlib.dates.HourLocator(interval=6))
 plt.xticks(rotation=45)
+
+
+# 각 플롯의 시작 시간과 끝 시간을 그래프에 표기
+for i, (start, end) in enumerate(zip(df['Start'], df['End'])):
+    plt.text(start, i, start.strftime('%Y.%m.%d %H:%M'), fontsize=5, va='center', ha='right')
+    plt.text(end, i, end.strftime('%Y.%m.%d %H:%M'), fontsize=5, va='center', ha='left')
 
 
 # x축, y축 라벨 및 그래프 제목 설정
