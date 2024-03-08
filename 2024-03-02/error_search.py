@@ -1,8 +1,8 @@
 import pandas as pd
 
 
-df = pd.read_csv("C:/Users/Coding Lab/Desktop/Data-Analysis-Class/2024-03-02/data.csv")
-# df = pd.read_csv('/Users/jeongmyeonghun/Desktop/학원 수업/2024-03-02/data.csv')
+# df = pd.read_csv("C:/Users/Coding Lab/Desktop/Data-Analysis-Class/2024-03-02/data.csv")
+df = pd.read_csv('/Users/jeongmyeonghun/Desktop/학원 수업/2024-03-02/data.csv')
 
 
 error = '서울'
