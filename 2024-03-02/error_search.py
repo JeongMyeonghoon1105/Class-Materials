@@ -31,4 +31,18 @@ for i in range(len(df.index)):
           prev = index+1
 
 result = pd.DataFrame(data)
-result.to_csv('result.csv', index=False)
+# result.to_csv('result.csv', index=False)
+
+
+final = []
+cond = ['성남', '용인']
+
+for i in range(len(result.index)):
+  # if any(condition in data[i][1] for condition in cond):
+  #   final.append(result.loc[i])
+  for condition in cond:
+    if condition in data[i][1]:
+      final.append(result.loc[i])
+
+f = pd.DataFrame(final)
+f.to_csv('final.csv', index=False)
