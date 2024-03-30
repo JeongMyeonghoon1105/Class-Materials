@@ -4,8 +4,8 @@ from datetime import datetime
 
 
 # csv 파일을 바탕으로 데이터프레임 생성 & 컬럼명 설정
-df = pd.read_csv("C:/Users/Coding Lab/Desktop/Data-Analysis-Class/2024-03-02/time_data.csv")
-# df = pd.read_csv('/Users/jeongmyeonghun/Desktop/학원 수업/2024-03-02/time_data.csv')
+# df = pd.read_csv("C:/Users/Coding Lab/Desktop/Data-Analysis-Class/2024-03-02/time_data.csv")
+df = pd.read_csv('/Users/jeongmyeonghun/Desktop/학원 수업/2024-03-02/time_data.csv')
 df.columns = ['Start', 'End']
 
 
